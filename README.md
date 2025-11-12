@@ -1,52 +1,28 @@
-Educational Keystroke Logger — Lab / Defensive Demo
-Short description
-Educational keystroke-capture proof-of-concept intended strictly for defensive research and lab testing. Demonstrates basic keyboard event logging to a local file so security teams can study detection and remediation. Run only on systems you own or with explicit written permission.
-CRITICAL — Read Before Using
-This repository is for educational and defensive purposes only. Do not use on computers you do not own or without explicit written consent. Unauthorized use is illegal and unethical. The project purpose is to teach defenders how such tools work and how to detect and mitigate them.
-Table of Contents
-Purpose
-Features
-Requirements
-Installation
-Usage
-Sanitized Example Output
-File structure
-Safe Lab Setup (recommended)
-Detection & Remediation Guidance
-Contribution Guidelines
-Cleanup & Reversion
-License & Disclaimer
-Contact
-Purpose
-This repository demonstrates how keyboard-event capture can be implemented in a minimal, easy-to-follow way so that security practitioners can:
-Understand how keystroke-capture works at a conceptual level.
-Create controlled lab exercises for detection and response training.
-Test detection rules and endpoint protections in isolated environments.
-Not intended for abuse. The repository intentionally avoids any instructions or features for stealth, exfiltration, persistence, or remote attack.
-Features
-Minimal proof-of-concept script that records key events with timestamps to a local file.
-Sanitized example logs and screenshots for demonstration.
-Guidance on safe lab operation and detection strategies for defenders.
-Requirements
-Python 3.8+
-pynput (or other standard input-listening library used by the included script)
-Virtual machine or isolated test environment recommended
-Installation
-Clone the repository:
-git clone https://github.com/[your-account]/[repo-name].git
-cd [repo-name]
-Create and activate a virtual environment (recommended):
-python3 -m venv venv
-source venv/bin/activate
-Install dependencies:
-pip install -r requirements.txt
-requirements.txt example:
-pynput
-Usage (Lab / Defensive)
-Only run this on systems you own or where you have explicit written consent.
-Start the script in a terminal:
+This project demonstrates a basic keylogger implementation using Python's `pynput` library. It captures keystrokes and writes them to a local file (`key_log.txt`) in real time. The code is intended for educational and ethical use only — such as understanding input event handling, file I/O, and listener patterns in Python.
+
+ Features
+- Captures normal and special keys (space, enter, backspace)
+- Stores typed text in memory before writing to file
+- Real-time logging to `key_log.txt`
+- Lightweight and cross-platform (Windows/Linux)
+
+
+Prerequisites
+- Python 3.x
+- `pynput` library (`pip install pynput`)
+
+Run the Script
+bash
 python keylogger.py
-Interact with the system (or test pages) while monitoring from your isolated VM.
-Stop the script with Ctrl+C and inspect the sanitized log file:
-cat key_log.txt
-Note: This repository does not include any automated exfiltration or deployment tooling.
+
+
+Output
+All captured keystrokes are saved to `key_log.txt` in the same directory.
+
+ Disclaimer
+This tool is for **educational purposes only**. Do not use it to monitor others without explicit consent. Unauthorized use may violate privacy laws and ethical standards.
+
+ Learning Goals
+- Understand keyboard event listeners
+- Practice file handling in Python
+- Explore real-time input tracking
